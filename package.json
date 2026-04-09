@@ -1,0 +1,21 @@
+{
+  "name": "iso9001-toolkit",
+  "version": "1.0.0",
+  "description": "ISO 9001 文档工具包平台 - 帮助中小企业快速通过 ISO 9001 认证",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "init:db": "wrangler d1 execute iso9001-toolkit --file=workers/schema.sql"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  },
+  "keywords": [
+    "iso9001",
+    "cloudflare",
+    "workers"
+  ],
+  "author": "",
+  "license": "MIT"
+}
