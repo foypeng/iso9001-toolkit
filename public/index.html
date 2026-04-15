@@ -40,65 +40,77 @@
       <h2>我们的产品</h2>
       <p class="section-subtitle">针对不同合规需求的专业解决方案</p>
       
-      <div class="products-grid">
-        <!-- ISO 9001 产品 -->
-        <div class="product-card">
-          <div class="product-icon">
-            <div class="icon-9001">9001</div>
+      <div class="products-scroll-container">
+        <div class="products-scroll">
+          <!-- ISO 9001 产品 -->
+          <div class="product-item">
+            <div class="product-icon">
+              <div class="icon-9001">9001</div>
+            </div>
+            <h3>ISO 9001 质量管理</h3>
+            <p>帮助中小企业快速通过 ISO 9001 认证</p>
+            <a href="iso9001.html" class="btn btn-outline">了解详情</a>
           </div>
-          <h3>ISO 9001 质量管理体系</h3>
-          <p>帮助中小企业快速通过 ISO 9001 认证，提供 61 个文档模板和实施指南。</p>
-          <div class="product-features">
-            <span class="feature">✓ 61个文档模板</span>
-            <span class="feature">✓ 实施指南</span>
-            <span class="feature">✓ 差距分析工具</span>
+          
+          <!-- ISO 27001 产品 -->
+          <div class="product-item">
+            <div class="product-icon">
+              <div class="icon-27001">27001</div>
+            </div>
+            <h3>ISO 27001 信息安全</h3>
+            <p>建立完善的信息安全管理体系</p>
+            <a href="#" class="btn btn-outline">即将推出</a>
           </div>
-          <a href="iso9001.html" class="btn btn-outline">了解详情</a>
+          
+          <!-- GDPR 产品 -->
+          <div class="product-item">
+            <div class="product-icon">
+              <div class="icon-gdpr">GDPR</div>
+            </div>
+            <h3>EU GDPR 数据保护</h3>
+            <p>满足欧盟数据保护法规要求</p>
+            <a href="#" class="btn btn-outline">即将推出</a>
+          </div>
+          
+          <!-- ISO 14001 产品 -->
+          <div class="product-item">
+            <div class="product-icon">
+              <div class="icon-14001">14001</div>
+            </div>
+            <h3>ISO 14001 环境管理</h3>
+            <p>建立环境管理体系，减少环境影响</p>
+            <a href="#" class="btn btn-outline">即将推出</a>
+          </div>
+          
+          <!-- ISO 45001 产品 -->
+          <div class="product-item">
+            <div class="product-icon">
+              <div class="icon-45001">45001</div>
+            </div>
+            <h3>ISO 45001 职业健康安全</h3>
+            <p>保障员工健康与安全的工作环境</p>
+            <a href="#" class="btn btn-outline">即将推出</a>
+          </div>
+          
+          <!-- 更多产品 -->
+          <div class="product-item">
+            <div class="product-icon">
+              <div class="icon-more">+</div>
+            </div>
+            <h3>更多合规标准</h3>
+            <p>持续开发更多合规解决方案</p>
+            <a href="#contact" class="btn btn-outline">预约咨询</a>
+          </div>
         </div>
         
-        <!-- ISO 27001 产品 -->
-        <div class="product-card">
-          <div class="product-icon">
-            <div class="icon-27001">27001</div>
-          </div>
-          <h3>ISO 27001 信息安全管理体系</h3>
-          <p>建立完善的信息安全管理体系，保护企业数据资产，提升安全防护能力。</p>
-          <div class="product-features">
-            <span class="feature">✓ 安全政策模板</span>
-            <span class="feature">✓ 风险评估工具</span>
-            <span class="feature">✓ 安全控制措施</span>
-          </div>
-          <a href="#" class="btn btn-outline">即将推出</a>
-        </div>
-        
-        <!-- GDPR 产品 -->
-        <div class="product-card">
-          <div class="product-icon">
-            <div class="icon-gdpr">GDPR</div>
-          </div>
-          <h3>EU GDPR 数据保护合规</h3>
-          <p>满足欧盟数据保护法规要求，建立隐私保护体系，避免高额罚款。</p>
-          <div class="product-features">
-            <span class="feature">✓ 隐私政策模板</span>
-            <span class="feature">✓ 数据保护流程</span>
-            <span class="feature">✓ 合规检查清单</span>
-          </div>
-          <a href="#" class="btn btn-outline">即将推出</a>
-        </div>
-        
-        <!-- 更多产品 -->
-        <div class="product-card">
-          <div class="product-icon">
-            <div class="icon-more">+</div>
-          </div>
-          <h3>更多合规标准</h3>
-          <p>我们正在开发更多合规解决方案，包括 ISO 14001、ISO 45001 等标准。</p>
-          <div class="product-features">
-            <span class="feature">ISO 14001 环境管理</span>
-            <span class="feature">ISO 45001 职业健康安全</span>
-            <span class="feature">ISO 22301 业务连续性</span>
-          </div>
-          <a href="#contact" class="btn btn-outline">预约咨询</a>
+        <!-- 滚动控制按钮 -->
+        <div class="scroll-controls">
+          <button class="scroll-btn scroll-left" onclick="scrollProducts('left')">
+            <span>‹</span>
+          </button>
+          <button class="scroll-btn scroll-right" onclick="scrollProducts('right')">
+            <span>›</span>
+          </button>
         </div>
       </div>
     </div>

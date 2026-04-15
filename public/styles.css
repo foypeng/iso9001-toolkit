@@ -386,12 +386,7 @@ body {
 }
 
 
-/* 新首页样式 */
-.hero-home {
-  background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-  padding: 180px 0 120px;
-}
-
+/* 产品展示 - 滚动样式 */
 .products-section {
   padding: 100px 0;
   background: white;
@@ -408,16 +403,50 @@ body {
   text-align: center;
   font-size: 18px;
   color: #666;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
 }
 
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+.hero-home {
+  background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+  padding: 180px 0 120px;
+}
+
+.products-scroll-container {
+  position: relative;
+  margin-top: 60px;
+}
+
+.products-scroll {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 20px 10px;
   gap: 30px;
+  scrollbar-width: thin;
+  scrollbar-color: #3498db #f1f1f1;
 }
 
-.product-card {
+.products-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.products-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.products-scroll::-webkit-scrollbar-thumb {
+  background: #3498db;
+  border-radius: 4px;
+}
+
+.products-scroll::-webkit-scrollbar-thumb:hover {
+  background: #2980b9;
+}
+
+.product-item {
+  flex: 0 0 280px;
   background: white;
   border: 1px solid #e0e0e0;
   border-radius: 10px;
@@ -427,7 +456,7 @@ body {
   position: relative;
 }
 
-.product-card:hover {
+.product-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   border-color: #3498db;
@@ -460,32 +489,67 @@ body {
   background: linear-gradient(135deg, #e74c3c, #c0392b);
 }
 
+.icon-14001 {
+  background: linear-gradient(135deg, #16a085, #1abc9c);
+}
+
+.icon-45001 {
+  background: linear-gradient(135deg, #8e44ad, #9b59b6);
+}
+
 .icon-more {
   background: linear-gradient(135deg, #f39c12, #d68910);
 }
 
-.product-card h3 {
+.product-item h3 {
   font-size: 20px;
   margin-bottom: 15px;
   color: #2c3e50;
 }
 
-.product-card p {
+.product-item p {
   color: #666;
   margin-bottom: 20px;
   font-size: 14px;
   line-height: 1.6;
 }
 
-.product-features {
-  margin-bottom: 20px;
+/* 滚动控制按钮 */
+.scroll-controls {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
 }
 
-.product-features .feature {
-  display: block;
-  color: #27ae60;
-  font-size: 13px;
-  margin-bottom: 5px;
+.scroll-btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-btn:hover {
+  background: #2980b9;
+  transform: scale(1.1);
+}
+
+.scroll-btn:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.scroll-btn span {
+  line-height: 1;
 }
 
 /* 解决方案区域 */
@@ -753,7 +817,6 @@ body {
   }
   
   .pricing-grid,
-  .products-grid,
   .solutions-grid,
   .why-us-grid,
   .contact-grid,
@@ -775,5 +838,22 @@ body {
   
   .nav-links a {
     margin-left: 0;
+  }
+  
+  /* 移动端产品滚动 */
+  .products-scroll {
+    padding: 20px 5px;
+    gap: 15px;
+  }
+  
+  .product-item {
+    flex: 0 0 250px;
+    padding: 20px;
+  }
+  
+  .scroll-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
   }
 }

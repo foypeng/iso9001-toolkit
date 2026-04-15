@@ -106,6 +106,37 @@ function redirectToPayment(orderData, paymentMethod) {
   // 支付宝：跳转支付宝支付页面
 }
 
+// 产品滚动功能
+function scrollProducts(direction) {
+  const container = document.querySelector('.products-scroll');
+  const scrollAmount = 300; // 每次滚动300px
+  
+  if (direction === 'left') {
+    container.scrollLeft -= scrollAmount;
+  } else if (direction === 'right') {
+    container.scrollLeft += scrollAmount;
+  }
+  
+  // 更新按钮状态
+  updateScrollButtons();
+}
+
+// 更新滚动按钮状态
+function updateScrollButtons() {
+  const container = document.querySelector('.products-scroll');
+  const leftBtn = document.querySelector('.scroll-left');
+  const rightBtn = document.querySelector('.scroll-right');
+  
+  if (!container || !leftBtn || !rightBtn) return;
+  
+  // 检查是否在最左边
+  leftBtn.disabled = container.scrollLeft <= 0;
+  
+  // 检查是否在最右边
+  const maxScroll = container.scrollWidth - container.clientWidth;
+  rightBtn.disabled = container.scrollLeft >= maxScroll - 1; // 减1是为了解决精度问题
+}
+
 // 页面加载完成后的初始化
 document.addEventListener('DOMContentLoaded', function() {
   // 平滑滚动
@@ -135,18 +166,27 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   // 产品卡片悬停效果
-  const productCards = document.querySelectorAll('.product-card');
-  productCards.forEach(card => {
-    card.addEventListener('mouseenter', function() {
+  const productItems = document.querySelectorAll('.product-item');
+  productItems.forEach(item => {
+    item.addEventListener('mouseenter', function() {
       this.style.transform = 'translateY(-10px)';
       this.style.boxShadow = '0 15px 30px rgba(0,0,0,0.15)';
     });
     
-    card.addEventListener('mouseleave', function() {
+    item.addEventListener('mouseleave', function() {
       this.style.transform = 'translateY(0)';
       this.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
     });
   });
+  
+  // 初始化滚动按钮状态
+  updateScrollButtons();
+  
+  // 监听滚动事件，更新按钮状态
+  const scrollContainer = document.querySelector('.products-scroll');
+  if (scrollContainer) {
+    scrollContainer.addEventListener('scroll', updateScrollButtons);
+  }
   
   // 方案卡片悬停效果
   const solutionCards = document.querySelectorAll('.solution-card');
