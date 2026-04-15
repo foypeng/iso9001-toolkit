@@ -384,3 +384,396 @@ body {
     display: none;
   }
 }
+
+
+/* 新首页样式 */
+.hero-home {
+  background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+  padding: 180px 0 120px;
+}
+
+.products-section {
+  padding: 100px 0;
+  background: white;
+}
+
+.products-section h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 60px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.product-card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border-color: #3498db;
+}
+
+.product-icon {
+  margin-bottom: 20px;
+}
+
+.product-icon div {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  line-height: 80px;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.icon-9001 {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+}
+
+.icon-27001 {
+  background: linear-gradient(135deg, #27ae60, #229954);
+}
+
+.icon-gdpr {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+.icon-more {
+  background: linear-gradient(135deg, #f39c12, #d68910);
+}
+
+.product-card h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.product-card p {
+  color: #666;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.product-features {
+  margin-bottom: 20px;
+}
+
+.product-features .feature {
+  display: block;
+  color: #27ae60;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+/* 解决方案区域 */
+.solutions-section {
+  padding: 100px 0;
+  background: #f8f9fa;
+}
+
+.solutions-section h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.solution-card {
+  background: white;
+  border-radius: 10px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  position: relative;
+  transition: all 0.3s;
+}
+
+.solution-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.solution-card.popular {
+  border: 3px solid #3498db;
+  transform: scale(1.05);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #3498db;
+  color: white;
+  padding: 5px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.solution-card h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.solution-price {
+  font-size: 36px;
+  font-weight: bold;
+  color: #3498db;
+  margin-bottom: 30px;
+}
+
+.solution-features {
+  list-style: none;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.solution-features li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  color: #555;
+}
+
+/* 为什么选择我们 */
+.why-us-section {
+  padding: 100px 0;
+  background: white;
+}
+
+.why-us-section h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 60px;
+  color: #2c3e50;
+}
+
+.why-us-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.why-us-item {
+  text-align: center;
+  padding: 30px;
+}
+
+.why-us-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.why-us-item h4 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.why-us-item p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* 联系我们 */
+.contact-section {
+  padding: 100px 0;
+  background: #f8f9fa;
+}
+
+.contact-section h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 50px;
+  margin-top: 60px;
+}
+
+.contact-info {
+  padding: 30px;
+}
+
+.contact-info h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.contact-info p {
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.contact-form {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+/* 页脚 */
+.footer {
+  background: #2c3e50;
+  color: white;
+  padding: 80px 0 30px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.footer-col h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.footer-col h4 {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.footer-col p {
+  color: #bdc3c7;
+  line-height: 1.6;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  color: #bdc3c7;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-col ul li a:hover {
+  color: white;
+}
+
+.footer-bottom {
+  border-top: 1px solid #3d566e;
+  padding-top: 30px;
+  text-align: center;
+  color: #bdc3c7;
+  font-size: 14px;
+}
+
+/* Logo链接样式 */
+.logo a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.logo a:hover {
+  color: #0056b3;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 36px;
+  }
+  
+  .hero .subtitle {
+    font-size: 18px;
+  }
+  
+  .pricing-grid,
+  .products-grid,
+  .solutions-grid,
+  .why-us-grid,
+  .contact-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .navbar .container {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .nav-links a {
+    margin-left: 0;
+  }
+}

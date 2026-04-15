@@ -127,7 +127,117 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('发现未完成的订单:', orderId);
     // 可以在这里添加订单状态检查逻辑
   }
+  
+  // 表单验证和提交
+  const contactForm = document.querySelector('.contact-form form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', handleContactSubmit);
+  }
+  
+  // 产品卡片悬停效果
+  const productCards = document.querySelectorAll('.product-card');
+  productCards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      this.style.transform = 'translateY(-10px)';
+      this.style.boxShadow = '0 15px 30px rgba(0,0,0,0.15)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+      this.style.transform = 'translateY(0)';
+      this.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+    });
+  });
+  
+  // 方案卡片悬停效果
+  const solutionCards = document.querySelectorAll('.solution-card');
+  solutionCards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      if (!this.classList.contains('popular')) {
+        this.style.transform = 'translateY(-5px)';
+        this.style.boxShadow = '0 10px 30px rgba(0,0,0,0.15)';
+      }
+    });
+    
+    card.addEventListener('mouseleave', function() {
+      if (!this.classList.contains('popular')) {
+        this.style.transform = 'translateY(0)';
+        this.style.boxShadow = '0 5px 20px rgba(0,0,0,0.05)';
+      }
+    });
+  });
+  
+  // 导航栏滚动效果
+  window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+      navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+      navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+    } else {
+      navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+      navbar.style.backgroundColor = 'white';
+    }
+  });
 });
+
+// 处理联系表单提交
+function handleContactSubmit(event) {
+  event.preventDefault();
+  
+  const form = event.target;
+  const formData = new FormData(form);
+  const submitBtn = form.querySelector('button[type="submit"]');
+  
+  // 禁用按钮
+  submitBtn.disabled = true;
+  submitBtn.textContent = '提交中...';
+  
+  // 模拟表单提交
+  setTimeout(() => {
+    // 收集表单数据
+    const data = {};
+    formData.forEach((value, key) => {
+      data[key] = value;
+    });
+    
+    console.log('表单数据:', data);
+    
+    // 显示成功消息
+    alert('感谢您的咨询！我们会在24小时内与您联系。');
+    
+    // 重置表单
+    form.reset();
+    
+    // 恢复按钮状态
+    submitBtn.disabled = false;
+    submitBtn.textContent = '提交咨询';
+    
+  }, 1500);
+}
+
+// 产品选择功能
+function selectProduct(productId) {
+  // 根据产品ID跳转到相应页面
+  switch(productId) {
+    case 'iso9001':
+      window.location.href = 'iso9001.html';
+      break;
+    case 'iso27001':
+      alert('ISO 27001 产品即将推出，敬请期待！');
+      break;
+    case 'gdpr':
+      alert('EU GDPR 产品即将推出，敬请期待！');
+      break;
+    default:
+      alert('产品详情页面开发中...');
+  }
+}
+
+// 方案选择功能
+function selectSolution(solutionType) {
+  // 这里可以添加方案选择的逻辑
+  alert(`您选择了${solutionType}方案，正在跳转到购买页面...`);
+  // 实际项目中可以跳转到购买页面或显示购买弹窗
+}
 
 // 显示支付成功页面（支付回调后）
 function showPaymentSuccess(orderId) {
