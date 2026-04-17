@@ -222,7 +222,7 @@
         </div>
         
         <div class="contact-form">
-          <form>
+          <form action="https://formsubmit.co/509422391@qq.com" method="POST" id="contact-form">
             <div class="form-group">
               <label for="name">姓名 *</label>
               <input type="text" id="name" name="name" required>
@@ -253,6 +253,12 @@
               <label for="message">留言</label>
               <textarea id="message" name="message" rows="4"></textarea>
             </div>
+            
+            <!-- FormSubmit 配置 -->
+            <input type="hidden" name="_subject" value="Cloud-Wise 网站咨询">
+            <input type="hidden" name="_next" value="https://iso9001-toolkit.pages.dev/thank-you.html">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
             
             <button type="submit" class="btn btn-primary">提交咨询</button>
           </form>
